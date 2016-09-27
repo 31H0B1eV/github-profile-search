@@ -6,8 +6,13 @@ export class GithubService {
 
   private username: string;
 
-  constructor(private http: Http) {
-    this.username = 'johnsmith';
+  constructor(private _http: Http) {
+    this.username = 'octocat';
+  }
+
+  getUser() {
+    return this._http.get(`http://api.github.com/users/${this.username}`)
+      .map(res => res.json());
   }
 
 }
