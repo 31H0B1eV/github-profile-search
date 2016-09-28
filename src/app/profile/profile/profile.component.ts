@@ -25,4 +25,25 @@ export class ProfileComponent {
     );
   }
 
+  // TODO change type from any and add more check
+  searchUser(form: any) {
+    if(form.hasOwnProperty("username")) {
+      try {
+        this._githubService.getUser(form.username).subscribe(
+          user => {
+            this.user = user;
+          }
+        );
+      } catch (e) {
+        // console.error(e);
+      }
+    }
+
+    this._githubService.getRepos(form.username).subscribe(
+      repos => {
+        this.repos = repos;
+      }
+    );
+  }
+
 }

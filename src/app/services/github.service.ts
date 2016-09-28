@@ -10,14 +10,24 @@ export class GithubService {
     this.username = 'octocat';
   }
 
-  getUser() {
-    return this._http.get(`http://api.github.com/users/${this.username}`)
-      .map(res => res.json());
+  getUser(username?) {
+    if(!username) {
+      return this._http.get(`http://api.github.com/users/${this.username}`)
+        .map(res => res.json());
+    } else {
+      return this._http.get(`http://api.github.com/users/${username}`)
+        .map(res => res.json());
+    }
   }
 
-  getRepos() {
-    return this._http.get(`http://api.github.com/users/${this.username}/repos`)
-      .map(res => res.json());
+  getRepos(username?) {
+    if(!username) {
+      return this._http.get(`http://api.github.com/users/${this.username}/repos`)
+        .map(res => res.json());
+    } else {
+      return this._http.get(`http://api.github.com/users/${username}/repos`)
+        .map(res => res.json());
+    }
   }
 
 }

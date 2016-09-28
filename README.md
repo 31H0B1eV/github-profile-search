@@ -1,3 +1,8 @@
+###Don't forget about auth or [60 requests per hour](https://developer.github.com/v3/#rate-limiting)
+
+#####application screen shot:
+![working example](./example.png)
+
 # GithubProfileSearcher
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.15.

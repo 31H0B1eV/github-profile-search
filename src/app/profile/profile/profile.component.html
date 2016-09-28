@@ -1,3 +1,18 @@
+<div class="row">
+  <div class="col-md-12">
+    <form #f="ngForm">
+      <div class="form-group">
+        <input class="form-control"
+               type="text"
+               placeholder="Enter a Github user name"
+               name="username"
+               [(ngModel)]="username"
+               (keyup)="searchUser(f.value)">
+      </div>
+    </form>
+  </div>
+</div>
+
 <div *ngIf="user">
   <div class="card">
     <div class="card-header">
